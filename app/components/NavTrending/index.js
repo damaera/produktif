@@ -44,7 +44,7 @@ class HeaderTags extends React.PureComponent {
     return (
       <Wrapper
         style={{
-          borderBottom: 'solid 1px #e6e6e6'
+          borderBottom: 'solid 1px #e6e6e6',
         }}
       >
         <Scrollbars

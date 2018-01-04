@@ -8,7 +8,7 @@ export default () => (
     <Link to="/">
       <img
         src={Logo}
-        alt='logo'
+        alt="logo"
         style={{ height: 40 }}
       />
     </Link>
