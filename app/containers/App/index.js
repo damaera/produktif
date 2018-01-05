@@ -16,16 +16,44 @@ import { Switch, Route } from 'react-router-dom';
 
 import HomePage from 'containers/HomePage/Loadable';
 import NotFoundPage from 'containers/NotFoundPage/Loadable';
-import Header from 'containers/Header/Loadable';
+import ProfilePage from 'containers/ProfilePage/Loadable';
 
-export default function App() {
-  return (
-    <div>
-      <Header />
-      <Switch>
-        <Route exact path="/" component={HomePage} />
-        <Route component={NotFoundPage} />
-      </Switch>
-    </div>
-  );
+import Auth from 'containers/Auth';
+import Users from 'containers/Users';
+import Tags from 'containers/Tags';
+
+import HeaderComp from 'containers/HeaderComp';
+
+// import steem from 'steem';
+
+// https://api.asksteem.com/search?q=steem
+
+class App extends React.Component { // eslint-disable-line react/prefer-stateless-function
+  // componentDidMount() {
+  //   console.log(steem)
+  //   steem.api.getDiscussionsByTrending({ tag: 'indonesia', limit: 20 }, function(err, result) {
+  //     console.log(err, result);
+  //   });
+  // }
+
+  render() {
+    return (
+      <div>
+        {/*  */}
+        <Auth />
+        <Users />
+        <Tags />
+        {/*  */}
+        <HeaderComp />
+        {/*  */}
+        <Switch>
+          <Route exact path="/" component={HomePage} />
+          <Route path="/@:username" component={ProfilePage} />
+          <Route component={NotFoundPage} />
+        </Switch>
+      </div>
+    );
+  }
 }
+
+export default App;

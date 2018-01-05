@@ -8,7 +8,7 @@ import { defineMessages } from 'react-intl';
 export default defineMessages({
   search: {
     id: 'app.components.NavBar.search',
-    defaultMessage: 'Search',
+    defaultMessage: 'Search...',
   },
   write: {
     id: 'app.components.NavBar.write',
@@ -17,5 +17,13 @@ export default defineMessages({
   home: {
     id: 'app.components.NavBar.home',
     defaultMessage: 'Home',
+  },
+  login: {
+    id: 'app.components.NavBar.login',
+    defaultMessage: 'Login',
+  },
+  signUp: {
+    id: 'app.components.NavBar.signUp',
+    defaultMessage: 'Sign up',
   },
 });

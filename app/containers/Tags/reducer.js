@@ -1,6 +1,6 @@
 /*
  *
- * Header reducer
+ * Tags reducer
  *
  */
 

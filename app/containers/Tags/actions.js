@@ -1,11 +1,10 @@
 /*
  *
- * Header actions
+ * Tags actions
  *
  */
 
 import {
-  // DEFAULT_ACTION,
   GET_TRENDING_TAGS_START,
   GET_TRENDING_TAGS_ERROR,
   GET_TRENDING_TAGS_SUCCESS,

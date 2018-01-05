@@ -1,8 +1,9 @@
-import { call, put, takeLatest } from 'redux-saga/effects';
-import { GET_TRENDING_TAGS_START } from 'containers/Header/constants';
-import { getTrendingTagsError, getTrendingTagsSuccess } from 'containers/Header/actions';
-
 import steem from 'steem';
+
+import { call, put, takeLatest } from 'redux-saga/effects';
+import { GET_TRENDING_TAGS_START } from './constants';
+import { getTrendingTagsError, getTrendingTagsSuccess } from './actions';
+
 // import { makeSelectaHeader } from 'containers/Header/selectors';
 
 function apiTrending() {
@@ -15,9 +16,6 @@ function apiTrending() {
 }
 
 export function* getTrendingTags() {
-  // const category = 'indonesia';
-  // const limit = 10;
-
   try {
     const trendingTags = yield call(apiTrending);
     yield put(getTrendingTagsSuccess(trendingTags));

@@ -5,11 +5,13 @@ import { FormattedMessage } from 'react-intl';
 import messages from './messages';
 
 import SearchIcon from './SearchIcon.svg';
+import TriIcon from './TriIcon.svg';
 
 const Nav = styled.div`
   /* height: 10px; */
   display: flex;
   align-items: center;
+  width: 320px;
 `;
 
 const TextSearch = styled.input`
@@ -17,18 +19,36 @@ const TextSearch = styled.input`
   /* padding-left: 0; */
   outline: none;
   font-size: .95em;
+  transition: padding 0.1s;
+
+  &:focus {
+    padding-left: 20px;
+    padding-right: 12px;
+  }
 `;
 
 const NavLeft = () => (
   <Nav>
-    {/* formatted message, for placeholder
-        react-intl can't render as a string, must component.
-     */}
+    <img
+      src={TriIcon}
+      style={{ height: 18, width: 20, marginRight: 20 }}
+      alt="More"
+    />
+    <div
+      style={{
+        height: 24,
+        borderLeft: 'solid 1px #e6e6e6',
+        marginRight: 20,
+      }}
+    />
     <img
       src={SearchIcon}
       style={{ height: 16, width: 16 }}
       alt="search"
     />
+    {/* formatted message, for placeholder
+        react-intl can't render as a string, must component.
+      */}
     <FormattedMessage {...messages.search}>
       {
         (msg) => (
