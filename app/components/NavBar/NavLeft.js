@@ -18,8 +18,10 @@ const TextSearch = styled.input`
   padding: 8px 16px;
   /* padding-left: 0; */
   outline: none;
-  font-size: .95em;
+  font-size: 16px;
+  color: #828282;
   transition: padding 0.1s;
+  letter-spacing: 0.02em;
 
   &:focus {
     padding-left: 20px;

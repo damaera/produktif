@@ -30,7 +30,7 @@ const TextWrite = styled.button`
   outline: none;
   margin-right: 20px;
   font-size: .95em;
-  color: #EB5757;
+  color: #828282;
 `;
 
 const MenuDropDown = styled.div`
@@ -48,10 +48,17 @@ const MenuDropDown = styled.div`
 `;
 
 const MenuItem = styled.div`
-  padding: 10px 20px;
+  padding: 8px 20px;
+  width: 100px;
   cursor: pointer;
   font-size: .8em;
   opacity: .6;
+`;
+
+const Divider = styled.div`
+  padding-top: 3px;
+  margin-bottom: 3px;
+  border-bottom: solid 1px #e6e6e6;
 `;
 
 class AfterLogin extends React.Component { // eslint-disable-line react/prefer-stateless-function
@@ -105,10 +112,27 @@ class AfterLogin extends React.Component { // eslint-disable-line react/prefer-s
         { this.state.menuShowed && <ClickOutside onClickOutside={this.hideMenu}>
           <MenuDropDown>
             <Link to={`/@${this.props.auth.username}`}>
-              <MenuItem>My profile</MenuItem>
+              <MenuItem>
+                <FormattedMessage {...messages.myProfile} />
+              </MenuItem>
             </Link>
+            <MenuItem>
+              <FormattedMessage {...messages.wallet} />
+            </MenuItem>
+            <MenuItem>
+              <FormattedMessage {...messages.stats} />
+            </MenuItem>
+            <Divider />
+            <MenuItem>
+              <FormattedMessage {...messages.settings} />
+            </MenuItem>
+            <MenuItem>
+              <FormattedMessage {...messages.help} />
+            </MenuItem>
             <Link to="https://steemconnect.com/logout">
-              <MenuItem>Log out</MenuItem>
+              <MenuItem>
+                <FormattedMessage {...messages.logout} />
+              </MenuItem>
             </Link>
           </MenuDropDown>
           </ClickOutside>
