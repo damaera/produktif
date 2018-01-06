@@ -15,31 +15,50 @@ import styled from 'styled-components';
 import Post from 'components/Post';
 import Wrapper from 'components/Wrapper';
 
-import { FormattedMessage } from 'react-intl';
-import messages from './messages';
+import Masonry from 'react-masonry-component';
+
+// import { FormattedMessage } from 'react-intl';
+// import messages from './messages';
 
 const PostWrapper = styled.div`
-  display: flex;
+  /* display: flex;
   justify-content: space-between;
-  flex-wrap: wrap;
+  flex-wrap: wrap; */
 `;
+
 
 export default class HomePage extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
   render() {
     return (
-      <Wrapper width={1280}>
+      <Wrapper width={1260}>
+        <br />
         <span>
-          <FormattedMessage {...messages.header} />
-          <p>
-            let name
-          </p>
           <PostWrapper>
-            <Post></Post>
-            <Post></Post>
-            <Post></Post>
-            <Post></Post>
-            <Post></Post>
-            <Post></Post>
+            <Masonry
+              options={{
+                gutter: 20,
+                transitionDuration: 0,
+                columnWidth: 300,
+              }}
+            >
+              <Post wide></Post>
+              <Post long></Post>
+              <Post noImg></Post>
+              <Post wide></Post>
+              <Post long></Post>
+              <Post noImg></Post>
+              <Post wide></Post>
+              <Post long></Post>
+              <Post wide></Post>
+              <Post noImg></Post>
+              <Post wide></Post>
+              <Post long></Post>
+              <Post noImg></Post>
+              <Post wide></Post>
+              <Post long></Post>
+              <Post wide></Post>
+              <Post noImg></Post>
+            </Masonry>
           </PostWrapper>
         </span>
       </Wrapper>

@@ -7,17 +7,19 @@
 import React from 'react';
 import styled from 'styled-components';
 
+import PropTypes from 'prop-types';
+
 import PostHeader from './PostHeader';
 import PostFooter from './PostFooter';
 
 const PostWrapper = styled.div`
-  
-  width: 630px;
-  height: 240px;
+  width: ${(props) => props.wide ? 620 : 300}px;
+  height: ${(props) => props.long ? 500 : 240}px;
   border-radius: 6px;
   border: solid 1px #e6e6e6;
   display: flex;
   margin-bottom: 20px;
+  ${(props) => !props.wide && 'flex-direction: column;'}
 `;
 
 const Title = styled.h3`
@@ -43,15 +45,16 @@ const Paragraph = styled.p`
   margin: 5px 0;
 `;
 
-const LeftSection = styled.div`
+const TextSection = styled.div`
   padding: 20px;
-  width: 330px;
+  width: ${(props) => props.wide ? 320 : 300}px;
+  height: ${(props) => props.long ? '278px' : 'auto'};
   /* position: relative; */
   display: flex;
   flex-direction: column;
 `;
 
-const RightSection = styled.div`
+const ImgSection = styled.div`
   width: 300px;
   display: flex;
   align-items: center;
@@ -63,13 +66,21 @@ const ImgPost = styled.img`
   object-fit: cover;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
   border-radius: 4px;
+  margin-top: 22px;
+  margin-bottom: ${(props) => props.wide ? 22 : 0}px;
 `;
 
 class Post extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
   render() {
     return (
-      <PostWrapper>
-        <LeftSection>
+      <PostWrapper {...this.props}>
+        {(!this.props.noImg && !this.props.wide) && <ImgSection>
+          <ImgPost
+            src="https://static01.nyt.com/images/2018/01/05/us/politics/05dc-dossier/merlin_129224765_7ed46589-64b7-486c-8ca1-a8804c4ae825-master768.jpg"
+            alt=""
+          />
+        </ImgSection>}
+        <TextSection wide={this.props.wide} long={this.props.long}>
           <PostHeader />
           <Title>Workplace Sexual Harassment Law: A Primer</Title>
           <Paragraph>
@@ -78,20 +89,24 @@ class Post extends React.PureComponent { // eslint-disable-line react/prefer-sta
             players to raw...
           </Paragraph>
           <PostFooter />
-        </LeftSection>
-        <RightSection>
+        </TextSection>
+        {this.props.wide && <ImgSection>
           <ImgPost
+            wide
             src="https://static01.nyt.com/images/2018/01/05/us/politics/05dc-dossier/merlin_129224765_7ed46589-64b7-486c-8ca1-a8804c4ae825-master768.jpg"
             alt=""
           />
-        </RightSection>
+        </ImgSection>}
       </PostWrapper>
     );
   }
 }
 
 Post.propTypes = {
-
+  wide: PropTypes.bool,
+  long: PropTypes.bool,
+  noImg: PropTypes.bool,
+  // video: PropTypes.bool,
 };
 
 export default Post;
