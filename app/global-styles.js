@@ -6,7 +6,7 @@ injectGlobal`
   body {
     height: 100%;
     width: 100%;
-    color: #222;
+    color: #333;
   }
 
   body, input, button {

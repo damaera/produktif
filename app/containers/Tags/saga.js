@@ -8,6 +8,7 @@ import { getTrendingTagsError, getTrendingTagsSuccess } from './actions';
 
 function apiTrending() {
   return new Promise((resolve, reject) => {
+    // console.log(steem)
     steem.api.getTrendingTags('indonesia', 20, (err, result) => {
       if (err) reject(err);
       resolve(result);

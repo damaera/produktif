@@ -16,7 +16,7 @@ const TagText = styled.button`
   text-transform: uppercase;
   letter-spacing: .15em;
   font-size: .75em;
-  opacity: .7;
+  color: #4f4f4f;
   background: none;
   outline: none;
   border: none;

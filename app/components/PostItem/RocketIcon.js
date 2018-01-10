@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const RocketIcon = (props) => (
-  <svg width="20" height="20" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
+  <svg className={props.className} width="20" height="20" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
     <title>Vector</title>
     <desc>Created using Figma</desc>
     <g id="Canvas" transform="translate(691 576)">
@@ -46,6 +46,7 @@ const RocketIcon = (props) => (
 
 RocketIcon.propTypes = {
   fill: PropTypes.string,
+  className: PropTypes.string,
 };
 
 export default RocketIcon;

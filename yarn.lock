@@ -6938,6 +6938,10 @@ relateurl@0.2.x:
   version "0.2.7"
   resolved "https://registry.yarnpkg.com/relateurl/-/relateurl-0.2.7.tgz#54dbf377e51440aca90a4cd274600d3ff2d888a9"
 
+remove-markdown@^0.2.2:
+  version "0.2.2"
+  resolved "https://registry.yarnpkg.com/remove-markdown/-/remove-markdown-0.2.2.tgz#66b0ceeba9fb77ca9636bb1b0307ce21a32a12a6"
+
 remove-trailing-separator@^1.0.1:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/remove-trailing-separator/-/remove-trailing-separator-1.1.0.tgz#c24bce2a283adad5bc3f58e0d48249b92379d8ef"
@@ -7270,6 +7274,12 @@ shelljs@^0.7.5, shelljs@^0.7.7:
 shellwords@^0.1.0:
   version "0.1.1"
   resolved "https://registry.yarnpkg.com/shellwords/-/shellwords-0.1.1.tgz#d6b9181c1a48d397324c84871efbcfc73fc0654b"
+
+shiitake@^2.2.3:
+  version "2.2.3"
+  resolved "https://registry.yarnpkg.com/shiitake/-/shiitake-2.2.3.tgz#d056446f2073502860b5d9da093491cad6a2c293"
+  dependencies:
+    prop-types "^15.5.8"
 
 signal-exit@^3.0.0:
   version "3.0.2"

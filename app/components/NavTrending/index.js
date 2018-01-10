@@ -34,9 +34,9 @@ const WrapperTags = styled.div`
 class HeaderTags extends React.PureComponent {
   renderTrendingTags() {
     return this.props.tags
-      .filter((tag) => tag.name !== 'indonesia')
+      // .filter((tag) => tag.name !== 'indonesia')
       .map((tag) => (
-        <Tag key={tag.name} name={tag.name} />
+        <Tag key={tag} name={tag} />
       ));
   }
 
